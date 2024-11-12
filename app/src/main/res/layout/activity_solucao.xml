@@ -72,7 +72,7 @@
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:contentDescription="@string/txt_button_inicio"
+                android:contentDescription="@string/txt_descricao_img_home"
                 android:src="@drawable/ic_home" />
 
             <TextView

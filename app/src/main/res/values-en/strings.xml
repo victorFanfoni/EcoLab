@@ -44,5 +44,11 @@
     <string name="txt_digite_seu_novo_nome">Enter your new name</string>
     <string name="txt_digite_seu_novo_telefone">Enter your new phone number</string>
     <string name="txt_exemplo_nome">Username</string>
+    <string name="txt_descricao_img_home">Button home</string>
+    <string name="txt_descricao_button_sair">Button Sair</string>
+    <string name="txt_decricao_button_sobre">Button Sobre</string>
+    <string name="txt_descricao_button_objetivo">Button Objective</string>
+    <string name="txt_descricao_button_solucao">Button Solution</string>
+    <string name="img_energia_sustentavel">Image Sustainable Energy</string>
 
 </resources>

@@ -79,7 +79,7 @@
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:contentDescription="Início"
+                android:contentDescription="@string/txt_descricao_img_home"
                 android:src="@drawable/ic_home" />
 
             <TextView

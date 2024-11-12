@@ -11,8 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="37dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -63,21 +64,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/toolbar"
-            android:layout_marginTop="10dp"
-            android:text="@string/txt_exemplo_nome"
-            android:gravity="center"
             android:layout_centerHorizontal="true"
-            android:textColor="@color/black"
-            />
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/txt_exemplo_nome"
+            android:textColor="@color/black" />
 
         <ImageView
             android:id="@+id/viewPager"
-            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="162dp"
-            android:background="@drawable/energia_sustentavel"
             android:layout_below="@id/nameUser"
+            android:layout_margin="10dp"
             android:layout_marginBottom="20dp"
+            android:background="@drawable/energia_sustentavel"
+            android:contentDescription="@string/img_energia_sustentavel"
             android:padding="16dp" />
 
         <GridLayout
@@ -103,50 +104,49 @@
                 android:id="@+id/button_solucao"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:layout_margin="5dp"
                 android:background="@color/sss"
+                android:contentDescription="@string/txt_descricao_button_solucao"
+                android:gravity="center"
                 android:text="@string/txt_button_solucao"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                android:gravity="center"
-                android:layout_margin="5dp"
-                android:contentDescription="Button Solucao" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/button_objetivo"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:layout_margin="5dp"
                 android:background="@color/sss"
+                android:contentDescription="@string/txt_descricao_button_objetivo"
+                android:gravity="center"
                 android:text="@string/txt_button_objetivo"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                android:gravity="center"
-                android:layout_margin="5dp"
-                android:contentDescription="Button Objetivo" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/button_sobre"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:layout_margin="5dp"
                 android:background="@color/sss"
+                android:contentDescription="@string/txt_decricao_button_sobre"
+                android:gravity="center"
                 android:text="@string/txt_button_sobre"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                android:gravity="center"
-                android:layout_margin="5dp"
-                android:contentDescription="Button Sobre" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/button_Sair"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:layout_margin="5dp"
                 android:background="@color/sss"
+                android:contentDescription="@string/txt_descricao_button_sair"
+                android:gravity="center"
                 android:text="@string/txt_button_sair"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                android:gravity="center"
-                android:layout_margin="5dp"
-                android:contentDescription="Button Sair" />
-
+                android:textSize="20sp" />
 
 
         </GridLayout>
@@ -157,6 +157,7 @@
             android:layout_height="70dp"
             android:layout_alignParentBottom="true"
             android:background="#0469A2"
+            android:baselineAligned="false"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -166,12 +167,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="UseCompoundDrawables,UselessParent">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:contentDescription="Início"
+                    android:contentDescription="@string/txt_descricao_img_home"
                     android:src="@drawable/ic_home" />
 
                 <TextView
