@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#CDCDCD">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="37dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:background="@drawable/bg_color_toolbar"
+            android:padding="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/buttonConfiguracoes"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/txt_ic_menu"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_menu" />
+
+                <TextView
+                    android:layout_width="123dp"
+                    android:layout_height="68dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="90dp"
+                    android:layout_marginBottom="-1dp"
+                    android:layout_toEndOf="@+id/buttonConfiguracoes"
+                    android:gravity="center"
+                    android:text="@string/ecolab"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/toolbar"
+            android:background="@color/sss" />
+
+        <TextView
+            android:id="@+id/nameUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginTop="10dp"
+            android:text="@string/txt_exemplo_nome"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            />
+
+        <ImageView
+            android:id="@+id/viewPager"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="162dp"
+            android:background="@drawable/energia_sustentavel"
+            android:layout_below="@id/nameUser"
+            android:layout_marginBottom="20dp"
+            android:padding="16dp" />
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/viewPager"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:columnCount="3"
+            android:foregroundGravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:rowCount="3">
+
+
+            <TextView
+                android:id="@+id/button_solucao"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@color/sss"
+                android:text="@string/txt_button_solucao"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:contentDescription="Button Solucao" />
+
+            <TextView
+                android:id="@+id/button_objetivo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@color/sss"
+                android:text="@string/txt_button_objetivo"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:contentDescription="Button Objetivo" />
+
+            <TextView
+                android:id="@+id/button_sobre"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@color/sss"
+                android:text="@string/txt_button_sobre"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:contentDescription="Button Sobre" />
+
+            <TextView
+                android:id="@+id/button_Sair"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@color/sss"
+                android:text="@string/txt_button_sair"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:contentDescription="Button Sair" />
+
+
+
+        </GridLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomMenu"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:background="#0469A2"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/Home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="Início"
+                    android:src="@drawable/ic_home" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/txt_button_home"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout >

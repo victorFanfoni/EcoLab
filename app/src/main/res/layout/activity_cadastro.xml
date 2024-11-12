@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#65A67C">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="162dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="72dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="@string/txt_titulo_cadastro"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/edit_email"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:autofillHints="emailAddress"
+        android:background="@drawable/bg_edittext"
+        android:drawableStart="@drawable/ic_email"
+        android:hint="@string/txt_hint_e_mail"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/edit_senha"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_email"
+        android:layout_centerHorizontal="true"
+        android:autofillHints="password"
+        android:background="@drawable/bg_edittext"
+        android:drawableStart="@drawable/lock"
+        android:hint="@string/txt_hint_senha"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_email"
+        app:layout_constraintVertical_bias="0.073" />
+
+    <EditText
+        android:id="@+id/edit_confirmarSenha"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_email"
+        android:layout_centerHorizontal="true"
+        android:autofillHints="password"
+        android:background="@drawable/bg_edittext"
+        android:drawableStart="@drawable/lock"
+        android:hint="@string/txt_hint_confirm_senha"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_senha"
+        app:layout_constraintVertical_bias="0.073" />
+
+
+    <Button
+        android:id="@+id/buttonCriarConta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:textColor="@color/black"
+        android:text="@string/txt_button_criar_conta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_confirmarSenha"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/black"
+        android:text="@string/txt_button_voltar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCriarConta" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

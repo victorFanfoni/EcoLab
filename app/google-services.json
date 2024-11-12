@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "483824608184",
+    "project_id": "ecolab-8040c",
+    "storage_bucket": "ecolab-8040c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483824608184:android:1492980adfb6b868cca54d",
+        "android_client_info": {
+          "package_name": "com.example.ecolab"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9FaerKY4a05Gvw6IXp6ddV7Lmv0wvs5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

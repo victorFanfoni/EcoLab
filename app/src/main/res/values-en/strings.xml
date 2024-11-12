@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EcoLab</string>
+    <string name="txt_objetivo">The EcoLab project aims to promote awareness about energy consumption, encouraging more sustainable practices. With the increasing demand for energy and associated environmental impacts, our focus is to help people understand the importance of reducing energy consumption in daily life, contributing to environmental preservation and mitigating the effects of climate change.</string>
+    <string name="ecolab">EcoLab</string>
+    <string name="txt_solucao">The solution developed by the EcoLab team is an app that helps users monitor and control their energy consumption in a practical and intuitive way. With real-time monitoring features, personalized tips, and suggestions for adjusting appliances and habits, the app helps users identify areas of waste and adopt more efficient practices, encouraging a conscious and sustainable consumption routine.</string>
+    <string name="txt_button_inicio">Start</string>
+    <string name="txt_button_home">Home</string>
+    <string name="txt_titulo_solucao">You are on our Solution screen</string>
+    <string name="txt_titulo_cadastro">Are you ready to change the future?</string>
+    <string name="txt_hint_e_mail">Enter your email</string>
+    <string name="txt_hint_senha">Enter Your Password</string>
+    <string name="txt_hint_confirm_senha">Confirm Your Password</string>
+    <string name="txt_button_criar_conta">Create Account</string>
+    <string name="txt_button_voltar">Back</string>
+    <string name="txt_titulo_redefinir_senha">Forgot your password? No problem, let s reset it now!</string>
+    <string name="txt_button_enviar">Send</string>
+    <string name="txt_ic_menu">Menu</string>
+    <string name="txt_button_solucao">Solution</string>
+    <string name="txt_button_objetivo">Objective</string>
+    <string name="txt_button_sobre">About</string>
+    <string name="txt_button_sair">Logout</string>
+    <string name="txt_titulo_informacao_pessoal">We need a few more details</string>
+    <string name="txt_hint_nome">Enter your Name</string>
+    <string name="txt_hint_telefone">Enter your Phone</string>
+    <string name="txt_login">Login</string>
+    <string name="txt_esqueceu_senha">Forgot your password?</string>
+    <string name="txt_button_entrar">Sign In</string>
+    <string name="txt_titulo_main">The future is in your hands!</string>
+    <string name="txt_titulo_objetivo">You are on our Objective screen</string>
+    <string name="txt_titulo_sobre">PROJECT MEMBERS</string>
+    <string name="txt_integrantes">Victor Fanfoni RM-99173\nGustavo Costa RM-99102\nHelena Paixão RM-550929\nGiulia Pina RM-97694\nJulia Nery RM-552292</string>
+    <string name="txt_titulo_configuracao">You are on the Settings screen</string>
+    <string name="txt_exemplo_usuario">User</string>
+    <string name="txt_button_atuli_email_senha">Update Email and Password</string>
+    <string name="txt_button_atuli_nome_telefone">Update Name and Phone</string>
+    <string name="txt_button_deletar_conta">Delete Account</string>
+    <string name="txt_titulo_email_password">You are on the Update Email and Password screen</string>
+    <string name="txt_hint_novo_e_mail">Enter your New Email</string>
+    <string name="txt_nova_senha">Enter Your New Password</string>
+    <string name="txt_hint_confirme_sua_nova_senha">Confirm Your New Password</string>
+    <string name="txt_digite_sua_senha_atual">Enter Your Current Password</string>
+    <string name="txt_titulo_name_phone">You are on the Update Name and Phone screen</string>
+    <string name="txt_digite_seu_novo_nome">Enter your new name</string>
+    <string name="txt_digite_seu_novo_telefone">Enter your new phone number</string>
+    <string name="txt_exemplo_nome">Username</string>
+
+</resources>
