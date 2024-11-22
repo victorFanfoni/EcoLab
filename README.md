@@ -46,7 +46,7 @@ Este aplicativo foi desenvolvido utilizando as seguintes tecnologias:
 
    Para começar, clone o repositório do projeto em sua máquina local:
    ```bash
-   git clone https://github.com/usuario/ecolab.git
+   https://github.com/victorFanfoni/EcoLab.git
    ```
 
 2. **Configuração do Firebase**
