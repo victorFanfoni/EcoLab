@@ -1,5 +1,3 @@
-# Conteúdo do README.md aprimorado
-conteudo_readme = """
 # EcoLab 🌱
 
 **EcoLab** é um aplicativo educacional que visa conscientizar seus usuários sobre a preservação ambiental e sustentabilidade. Ele oferece uma experiência interativa, com informações úteis e recursos personalizados para que cada usuário possa contribuir de maneira significativa para o meio ambiente.
