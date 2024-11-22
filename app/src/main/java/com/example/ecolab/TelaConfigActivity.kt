@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -18,7 +17,8 @@ class TelaConfigActivity : AppCompatActivity() {
 
     private val db = FirebaseFirestore.getInstance()
     private lateinit var auth: FirebaseAuth
-    private lateinit var userNamer: TextView
+    private lateinit var userName: TextView
+    private lateinit var userPhone: TextView
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,68 +26,62 @@ class TelaConfigActivity : AppCompatActivity() {
         setContentView(R.layout.telaconfig)
 
         auth = FirebaseAuth.getInstance()
-        userNamer = findViewById(R.id.Username)
+        userName = findViewById(R.id.Username)
+        userPhone = findViewById(R.id.UserPhone)
 
-        val buttonAtualizarEmailSenha = findViewById<Button>(R.id.button_update_email_senha)
-        val buttonAtualizarNomeTelefone = findViewById<Button>(R.id.button_atuli_nome_telefone)
-        val buttonDeletarConta = findViewById<Button>(R.id.buttonDeletarConta)
-        val buttonHome = findViewById<LinearLayout>(R.id.Home)
+        val buttonUpdateEmailPassword = findViewById<Button>(R.id.button_update_email_senha)
+        val buttonUpdateNamePhone = findViewById<Button>(R.id.button_atuli_nome_telefone)
+        val buttonDeleteAccount = findViewById<Button>(R.id.buttonDeletarConta)
+        val homeButton = findViewById<LinearLayout>(R.id.Home)
 
-        displayUserName()
+        displayUserInfo()
 
-        setupButtonListeners(
-            buttonAtualizarEmailSenha,
-            buttonAtualizarNomeTelefone,
-            buttonDeletarConta,
-            buttonHome
-        )
-    }
-
-    private fun setupButtonListeners(
-        buttonAtualizarEmailSenha: Button,
-        buttonAtualizarNomeTelefone: Button,
-        deleteButton: Button,
-        homeButton: LinearLayout
-    ) {
-        buttonAtualizarEmailSenha.setOnClickListener {
+        buttonUpdateEmailPassword.setOnClickListener {
             navigateToAndFinish(UpdateEmailAndPassword::class.java)
         }
-        buttonAtualizarNomeTelefone.setOnClickListener {
+
+        buttonUpdateNamePhone.setOnClickListener {
             navigateToAndFinish(updateNameAndPhoneactivity::class.java)
         }
-        deleteButton.setOnClickListener {
-            deletarConta()
+
+        buttonDeleteAccount.setOnClickListener {
+            deleteAccount()
         }
+
         homeButton.setOnClickListener {
             navigateToAndFinish(HomeActivity::class.java)
         }
     }
 
-    private fun displayUserName() {
+    @SuppressLint("SetTextI18n")
+    private fun displayUserInfo() {
         val user = auth.currentUser
         user?.uid?.let { userId ->
             db.collection("Usuarios").document(userId).get()
                 .addOnSuccessListener { document ->
-                    userNamer.text = document.getString("nome") ?: "Usuário"
+                    userName.text = document.getString("nome") ?: "Usuário"
+                    userPhone.text = document.getString("telefone") ?: "Telefone não disponível"
                 }
-                .addOnFailureListener { e ->
-                    userNamer.text = "Erro ao carregar nome: ${e.message}"
+                .addOnFailureListener {
+                    userName.text = "Erro ao carregar nome"
+                    userPhone.text = "Erro ao carregar telefone"
                 }
         } ?: run {
-            userNamer.text = "Usuário não autenticado"
+            userName.text = "Usuário não autenticado"
+            userPhone.text = "Telefone não disponível"
         }
     }
 
-    private fun deletarConta() {
+    private fun deleteAccount() {
         AlertDialog.Builder(this)
             .setTitle("Confirmar Exclusão")
             .setMessage("Tem certeza de que deseja excluir sua conta? Essa ação não pode ser desfeita.")
-            .setPositiveButton("Excluir") { _, _ -> realizarExclusaoConta() }
+            .setPositiveButton("Excluir") { _, _ -> performAccountDeletion() }
             .setNegativeButton("Cancelar") { dialog, _ -> dialog.dismiss() }
             .show()
     }
 
-    private fun realizarExclusaoConta() {
+    private fun performAccountDeletion() {
         val progressDialog = showProgressDialog("Excluindo Conta", "Aguarde enquanto excluímos sua conta...")
 
         auth.currentUser?.let { user ->
@@ -96,37 +90,31 @@ class TelaConfigActivity : AppCompatActivity() {
                     user.delete().addOnCompleteListener { deleteTask ->
                         progressDialog.dismiss()
                         if (deleteTask.isSuccessful) {
-                            showToast("Conta e informações deletadas com sucesso")
+                            Toast.makeText(this, "Conta deletada com sucesso", Toast.LENGTH_SHORT).show()
                             navigateToAndFinish(Login::class.java)
                         } else {
-                            showToast("Erro ao deletar conta: ${deleteTask.exception?.message}")
+                            Toast.makeText(this, "Erro ao deletar conta: ${deleteTask.exception?.message}", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
-                .addOnFailureListener { e ->
+                .addOnFailureListener {
                     progressDialog.dismiss()
-                    showToast("Erro ao deletar informações do Firestore: ${e.message}")
-                    Log.e("FirestoreDeletionError", "Erro ao deletar informações do usuário: ${e.message}")
+                    Toast.makeText(this, "Erro ao deletar informações do Firestore", Toast.LENGTH_SHORT).show()
                 }
-        } ?: showToast("Usuário não autenticado")
+        } ?: Toast.makeText(this, "Usuário não autenticado", Toast.LENGTH_SHORT).show()
     }
 
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
-    private fun navigateToAndFinish(activity: Class<*>) {
-        val intent = Intent(this, activity)
-        startActivity(intent)
+    private fun navigateToAndFinish(destination: Class<*>) {
+        startActivity(Intent(this, destination))
         finish()
     }
 
     private fun showProgressDialog(title: String, message: String): ProgressDialog {
-        return ProgressDialog(this).apply {
-            setTitle(title)
-            setMessage(message)
-            setCancelable(false)
-            show()
-        }
+        val progressDialog = ProgressDialog(this)
+        progressDialog.setTitle(title)
+        progressDialog.setMessage(message)
+        progressDialog.setCancelable(false)
+        progressDialog.show()
+        return progressDialog
     }
 }

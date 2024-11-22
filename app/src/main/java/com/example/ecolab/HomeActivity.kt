@@ -24,13 +24,17 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-         if (FirebaseAuth.getInstance().currentUser == null) {
+        if (FirebaseAuth.getInstance().currentUser == null) {
             redirectToLogin()
         } else {
             initializeViews()
             setButtonListeners()
-            displayUserName()
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        displayUserName()
     }
 
     private fun initializeViews() {

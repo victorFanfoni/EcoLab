@@ -50,5 +50,6 @@
     <string name="txt_descricao_button_objetivo">Button Objective</string>
     <string name="txt_descricao_button_solucao">Button Solution</string>
     <string name="img_energia_sustentavel">Image Sustainable Energy</string>
+    <string name="telefone">Phone</string>
 
 </resources>

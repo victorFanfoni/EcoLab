@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#CDCDCD">
 
     <androidx.appcompat.widget.Toolbar
@@ -28,16 +27,13 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
-        android:layout_centerHorizontal="true"
         android:gravity="center"
         android:text="@string/txt_titulo_configuracao"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <TextView
         android:id="@+id/Username"
@@ -48,89 +44,89 @@
         android:textSize="18sp"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@id/textView" />
+
+    <TextView
+        android:id="@+id/UserPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/telefone"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Username" />
+
+    <Button
+        android:id="@+id/button_update_email_senha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="@string/txt_button_atuli_email_senha"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/UserPhone" />
+
+    <Button
+        android:id="@+id/button_atuli_nome_telefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="@string/txt_button_atuli_nome_telefone"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_update_email_senha" />
+
+    <Button
+        android:id="@+id/buttonDeletarConta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:backgroundTint="#FF0000"
+        android:text="@string/txt_button_deletar_conta"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_atuli_nome_telefone" />
 
     <LinearLayout
         android:id="@+id/bottomMenu"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:background="#0469A2"
-        android:gravity="center"
         android:orientation="horizontal"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:id="@+id/Home"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center">
 
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:contentDescription="@string/txt_descricao_img_home"
-                android:src="@drawable/ic_home" />
+                android:src="@drawable/ic_home"
+                android:contentDescription="@string/txt_descricao_img_home" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:text="@string/txt_button_home"
                 android:textColor="@android:color/white"
                 android:textSize="12sp" />
         </LinearLayout>
-
     </LinearLayout>
-
-    <Button
-        android:id="@+id/button_update_email_senha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
-        android:text="@string/txt_button_atuli_email_senha"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Username"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button_atuli_nome_telefone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="@string/txt_button_atuli_nome_telefone"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_update_email_senha"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/buttonDeletarConta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/button_atuli_nome_telefone"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="52dp"
-        android:backgroundTint="#FF0000"
-        android:text="@string/txt_button_deletar_conta"
-        android:textColor="@color/black"
-        android:textAllCaps="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_atuli_nome_telefone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
